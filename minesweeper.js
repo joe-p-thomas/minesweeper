@@ -113,14 +113,14 @@ export class Board {
   }
 
   won() {
-    let won = true;
+    let tilesRevealed = 0;
     this.grid.forEach(row => {
       row.forEach(tile => {
-        if (tile.flagged === tile.revealed || tile.flagged !== tile.bombed) {
-          won = false;
+        if (tile.revealed) {
+          tilesRevealed += 1;
         }
       });
     });
-    return won;
+    return tilesRevealed === (this.gridSize * this.gridSize - this.numBombs);
   }
 }

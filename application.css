@@ -39,7 +39,15 @@ p {
   font-weight: bold;
 }
 
+.tile:hover {
+  background-color: #777;
+}
+
 .explored {
+  background-color: lightgrey;
+}
+
+.explored:hover {
   background-color: lightgrey;
 }
 
